@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.sql.Time;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.demo.appUser.*"})
+//@ComponentScan(basePackages = {"com.example.demo.appUser.*"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

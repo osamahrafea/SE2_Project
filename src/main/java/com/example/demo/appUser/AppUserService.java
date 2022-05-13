@@ -1,19 +1,19 @@
-package com.example.demo.appUser.logic.impl.usecase;
+package com.example.demo.appUser;
 
-import com.example.demo.appUser.dataaccess.api.repo.UserRepository;
+import com.example.demo.appUser.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service()
-
+@Service
+@AllArgsConstructor
 public class AppUserService implements UserDetailsService {
 
-    @Autowired
-    private  UserRepository userRepository;
+//    @Autowired
+    private final UserRepository userRepository;
 
 
 //    public void setUserRepository(UserRepository userRepository){
