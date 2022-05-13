@@ -1,6 +1,6 @@
-package com.example.demo.appUser.dataaccess.api.entity;
+package com.example.demo.appUser;
 
-import com.example.demo.appUser.common.api.datatype.AppUserRole;
+import com.example.demo.appUser.AppUserRole;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
