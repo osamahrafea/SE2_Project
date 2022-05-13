@@ -20,8 +20,6 @@ import java.util.Collections;
 @Entity
 
 public class AppUser implements UserDetails {
-
-
     @SequenceGenerator(
             name="user_sequence",
             sequenceName = "user_sequence",
