@@ -10,7 +10,7 @@ public class SignupDto {
     private String username;
     private String firstname;
     private String lastname;
-    private long phone;
+    private String phone;
     private String email;
     private String password;
 

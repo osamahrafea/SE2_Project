@@ -1,15 +1,12 @@
 package com.example.demo.user.facade;
 
-import com.example.demo.user.dataaccess.repo.SignInDto;
-import com.example.demo.user.dataaccess.repo.SignInResponseDte;
-import com.example.demo.user.dataaccess.repo.SignupDto;
-import com.example.demo.user.dataaccess.repo.Status;
+import com.example.demo.user.dataaccess.repo.*;
 import com.example.demo.user.logik.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "user")
@@ -24,6 +21,7 @@ public class UserController {
         userService.signUp(signupDto);
         return Status.SUCCESS;
     }
+
     @PostMapping("/login")
     public SignInResponseDte loginUser(@RequestBody SignInDto signinDto) {
         return userService.signIn(signinDto);
@@ -45,4 +43,10 @@ public class UserController {
 //        userRepository.deleteAll();
 //        return Status.SUCCESS;
 //    }
+@GetMapping("/allusers")
+public List<User> allusers() {
+      return   userService.getAllUsers();
+
+
+}
 }

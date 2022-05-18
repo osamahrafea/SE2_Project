@@ -4,21 +4,20 @@ import com.example.demo.user.dataaccess.repo.*;
 import com.example.demo.user.exceptions.AuthenticationFailException;
 import com.example.demo.user.exceptions.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Optional;
 
 @Service
-
 public class UserService {
-
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private AuthenticationService authenticationService;
 
@@ -90,5 +89,9 @@ public class UserService {
             throw new CustomException("Token is not Present");
         }
         return new SignInResponseDte("sucess",token.get().getToken());
+    }
+
+    public List<User> getAllUsers() {
+        return  userRepository.findAll();
     }
 }
