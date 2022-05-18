@@ -1,5 +1,6 @@
-package com.example.demo.user;
+package com.example.demo.user.logik;
 
+import com.example.demo.user.dataaccess.repo.*;
 import com.example.demo.user.exceptions.AuthenticationFailException;
 import com.example.demo.user.exceptions.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,9 @@ public class UserService {
         user.setEmail(signupDto.getEmail());
         user.setPassword(encodedPassword);
         user.setUsername(signupDto.getUsername());
+        user.setFirstname(signupDto.getFirstname());
+        user.setLastname(signupDto.getLastname());
+        user.setPhone(signupDto.getPhone());
         userRepository.save(user);
 
         // create the Token

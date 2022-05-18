@@ -1,5 +1,8 @@
-package com.example.demo.user;
+package com.example.demo.user.logik;
 
+import com.example.demo.user.dataaccess.repo.AuthenticationToken;
+import com.example.demo.user.dataaccess.repo.User;
+import com.example.demo.user.dataaccess.repo.TokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
